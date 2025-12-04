@@ -6,8 +6,8 @@ const nextConfig = {
     unoptimized: true,
   },
   // For GitHub Pages, set basePath if your repo name is not the root
-  // basePath: '/your-repo-name',
-  // trailingSlash: true,
+  basePath: '/Vidur-Nair-Website',
+  trailingSlash: true,
 }
 
 module.exports = nextConfig
