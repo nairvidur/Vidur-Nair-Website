@@ -47,8 +47,8 @@ export default function Downloads() {
   ]
 
   const handleDownload = (filename: string) => {
-    // Download from the API route
-    window.open(`/api/downloads/${filename}`, '_blank')
+    // Direct link to file in public folder (works with static export)
+    window.open(`/downloads/${filename}`, '_blank')
   }
 
   const categories = Array.from(new Set(pdfFiles.map(file => file.category)))
@@ -128,13 +128,8 @@ export default function Downloads() {
         <div className="mt-12 bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
           <h3 className="text-lg font-semibold text-gray-900 mb-2">Note</h3>
           <p className="text-gray-700">
-            To enable actual PDF downloads, you'll need to:
+            To enable actual PDF downloads, place your PDF files in the <code className="bg-gray-200 px-1 rounded">public/downloads/</code> directory with the exact filenames listed above.
           </p>
-          <ul className="list-disc list-inside mt-2 text-gray-700 space-y-1">
-            <li>Place your PDF files in the <code className="bg-gray-200 px-1 rounded">public/downloads/</code> directory</li>
-            <li>Create an API route at <code className="bg-gray-200 px-1 rounded">/api/downloads/[filename]</code> to serve the files</li>
-            <li>Update the download handler to use the actual file paths</li>
-          </ul>
         </div>
 
         <div className="mt-8 text-center">
